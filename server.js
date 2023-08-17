@@ -29,7 +29,7 @@ app.get('/tip', (req, res) => {
 
 // When hitting the route, the page should display how much your tip will be based on the total amount of the bill and the tip percentage. (ex. hitting '/tip/100/20'should display 20 on the page).
 app.get('/tip/:total/:tipPercentage', (req, res) => {
-  res.send(`<h1>$ ${req.params.total * req.params.tipPercentage / 100}</h1>`)
+  res.send(`<h1>$ ${(req.params.total * req.params.tipPercentage / 100).toFixed(2)}</h1>`)
 })
 
 // magic 8 ball
